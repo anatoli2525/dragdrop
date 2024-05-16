@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <div class="container">
+
+        <ul id="first">
+            <li class="list" draggable="true"> ...List N1</li>
+            <li class="list" draggable="true"> ...List N2</li>
+            <li class="list" draggable="true"> ...List N3</li>
+        </ul>
+        <div id="second"></div>
+    </div>
+
+<script>
+    let lists = document.getElementsByClassName("list");
+    let first = document.getElementById("first");
+    let second = document.getElementById("second");
+
+
+    for (let list of lists) {
+        list.addEventListener("dragstart", function(e) {
+            let select = e.target;
+            second.addEventListener("dragover", function(e) {
+                e.preventDefault();
+            });
+            second.addEventListener("drop", function(e) {
+                second.appendChild(select);
+                select = null;
+            });
+            first.addEventListener("dragover", function(e) {
+                e.preventDefault();
+            });
+            first.addEventListener("drop", function(e) {
+                first.appendChild(select);
+                select = null;
+            });
+           
+        });
+    }
+</script>
+
+</body>
+</html>

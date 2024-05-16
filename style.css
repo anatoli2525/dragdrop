@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: aqua;
+}
+.container{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+#first, #second{
+    width: 300px;
+    min-height: 400px;
+    margin: 20px;
+    margin-top: 100px;
+    border: 2px dashed #fff;
+}
+
+.list{
+    background-color: blueviolet;
+    height: 40px;
+    margin: 30px;
+    color: #fff;
+    display: flex;
+    align-items: center;cursor: grab;
+    border-radius: 10px;
+}
